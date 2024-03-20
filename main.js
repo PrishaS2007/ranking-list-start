@@ -37,30 +37,47 @@ function btnClicked() {
 
 // FUNCTIONS TO DEFINE
 function drawRankList() {
+  let listAmount = 0;
+  let htmlStr = "";
+  for (let list of rankList) {
+    listAmount++;
+    htmlStr += `<p>${listAmount}: ${list}</p>`;
+  }
+  document.getElementById("output").innerHTML = htmlStr;
   console.log("Draw rankList");
 }
 
 function addItem() {
+  let itemPrompt = prompt("Enter an item.");
+  document.getElementById("output").innerHTML = rankList.push(itemPrompt);
   console.log("Add Item");
 }
 
 function removeLast() {
+  document.getElementById("output").innerHTML = rankList.pop();
   console.log("Remove Last");
 }
 
 function insert() {
+  let positionPrompt = +prompt("Insert Position:");
+  let insertPrompt = prompt("Item to insert:");
+
   console.log("Insert");
 }
 
 function removePos() {
+  let removePrompt = +prompt("Position to remove:");
   console.log("Remove at Position");
 }
 
 function move() {
+  let fromPrompt = +prompt("Move item from:");
+  let toPrompt = +prompt("Move item to:");
   console.log("Move");
 }
 
 function edit() {
+  let positionPrompt = +prompt("Enter position");
   console.log("Edit");
 }
 
