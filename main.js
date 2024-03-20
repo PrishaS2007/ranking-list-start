@@ -61,6 +61,13 @@ function removeLast() {
 function insert() {
   let positionPrompt = +prompt("Insert Position:");
   let insertPrompt = prompt("Item to insert:");
+  for (let i = 0; i < rankList.length; i++) {
+    if (rankList[i] === positionPrompt) {
+      document.getElementById("output").innerHTML = rankList.push(
+        insertPrompt[i]
+      );
+    }
+  }
 
   console.log("Insert");
 }
@@ -78,6 +85,7 @@ function move() {
 
 function edit() {
   let positionPrompt = +prompt("Enter position");
+  let replacePrompt = prompt("Replace with:");
   console.log("Edit");
 }
 
