@@ -62,7 +62,7 @@ function insert() {
   let positionPrompt = +prompt("Insert Position:");
   let insertPrompt = prompt("Item to insert:");
   for (let i = 0; i < rankList.length; i++) {
-    rankList.splice(positionPrompt, 1, insertPrompt);
+    rankList.push(insertPrompt[i]);
   }
   console.log("Insert");
 }
@@ -89,8 +89,5 @@ function edit() {
 
 function empty() {
   let emptyArray = [""];
-  for (let i = 0; i < rankList.length; i++) {
-    emptyArray;
-  }
   console.log("Empty");
 }
