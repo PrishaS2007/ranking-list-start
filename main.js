@@ -88,5 +88,9 @@ function edit() {
 }
 
 function empty() {
+  let emptyArray = [""];
+  for (let i = 0; i < rankList.length; i++) {
+    emptyArray;
+  }
   console.log("Empty");
 }
