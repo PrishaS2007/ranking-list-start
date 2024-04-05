@@ -59,36 +59,35 @@ function removeLast() {
 }
 
 function insert() {
-  let positionPrompt = +prompt("Insert Position:");
+  let positionPrompt = +prompt("Position to insert:");
   let insertPrompt = prompt("Item to insert:");
-  for (let i = 0; i < rankList.length; i++) {
-    rankList.splice(2, 1, insertPrompt);
-  }
+  document.getElementById("output").innerHTML = rankList.splice(positionPrompt, 0, insertPrompt);
   console.log("Insert");
 }
 
 function removePos() {
   let removePrompt = +prompt("Position to remove:");
+  document.getElementById("output").innerHTML = rankList.splice(removePrompt, 1);
   console.log("Remove at Position");
 }
 
 function move() {
   let fromPrompt = +prompt("Move item from:");
   let toPrompt = +prompt("Move item to:");
+  var element = rankList[fromPrompt];
+  rankList.splice(fromPrompt, 1);
+  rankList.splice(toPrompt, 0, element);
   console.log("Move");
 }
 
 function edit() {
   let positionPrompt = +prompt("Enter position");
   let replacePrompt = prompt("Replace with:");
-  for (let i = 0; i < rankList.length; i++) {
-    rankList.splice(positionPrompt, 1, replacePrompt);
-  }
+  document.getElementById("output").innerHTML = rankList.splice(positionPrompt, 1, replacePrompt);
   console.log("Edit");
 }
 
 function empty() {
-  rankList.length = 0;
   rankList.splice(0, rankList.length);
   console.log("Empty");
 }
