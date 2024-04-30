@@ -61,13 +61,20 @@ function removeLast() {
 function insert() {
   let positionPrompt = +prompt("Position to insert:");
   let insertPrompt = prompt("Item to insert:");
-  document.getElementById("output").innerHTML = rankList.splice(positionPrompt, 0, insertPrompt);
+  document.getElementById("output").innerHTML = rankList.splice(
+    positionPrompt,
+    0,
+    insertPrompt
+  );
   console.log("Insert");
 }
 
 function removePos() {
   let removePrompt = +prompt("Position to remove:");
-  document.getElementById("output").innerHTML = rankList.splice(removePrompt, 1);
+  document.getElementById("output").innerHTML = rankList.splice(
+    removePrompt,
+    1
+  );
   console.log("Remove at Position");
 }
 
@@ -83,7 +90,11 @@ function move() {
 function edit() {
   let positionPrompt = +prompt("Enter position");
   let replacePrompt = prompt("Replace with:");
-  document.getElementById("output").innerHTML = rankList.splice(positionPrompt, 1, replacePrompt);
+  document.getElementById("output").innerHTML = rankList.splice(
+    positionPrompt,
+    1,
+    replacePrompt
+  );
   console.log("Edit");
 }
 
